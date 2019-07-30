@@ -1,4 +1,5 @@
 ﻿using IPA;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using IPALogger = IPA.Logging.Logger;
 
@@ -6,6 +7,8 @@ namespace DeviationCounter
 {
     public class Plugin : IBeatSaberPlugin
     {
+        DeviationCounter _counter;
+
         public void Init(IPALogger logger)
         {
             Logger.logger = logger;
@@ -19,7 +22,13 @@ namespace DeviationCounter
 
         public void OnUpdate() { }
 
-        public void OnActiveSceneChanged(Scene prevScene, Scene nextScene) { }
+        public void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
+        {
+            if (nextScene.name == "GameCore")
+            {
+                _counter = new GameObject("Deviation Counter").AddComponent<DeviationCounter>();
+            }
+        }
 
         public void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode) { }
 
