@@ -1,10 +1,10 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
-  "author": "",
-  "description": "",
-  "gameVersion": "0.12.2",
-  "id": null,
-  "name": "DeviationCounter",
-  "version": "0.0.1-alpha",
+  "author": "Steven 🎀",
+  "description": "A counter to show how early/late you hit bloq.",
+  "gameVersion": "1.2.0",
+  "id": "Deviation Counter",
+  "name": "Deviation Counter",
+  "version": "1.0.0",
   "features": []
 }
