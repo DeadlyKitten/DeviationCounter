@@ -56,7 +56,15 @@ namespace DeviationCounter
                 BSIPAMod = this,
                 Counter = "Deviation Counter",
             };
-            CustomCounterCreator.Create(counter);
+
+            CustomConfigModel defaults = new CustomConfigModel(counter.Name)
+            {
+                Enabled = true,
+                Position = CountersPlus.Config.ICounterPositions.BelowCombo,
+                Index = 1
+            };
+
+            CustomCounterCreator.Create(counter, defaults);
         }
     }
 }
