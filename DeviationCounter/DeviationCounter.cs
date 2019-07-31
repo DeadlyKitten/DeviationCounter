@@ -51,8 +51,6 @@ namespace DeviationCounter
         {
             _sum += info.timeDeviation;
             
-            Logger.Log($"Note {data.id} cut with deviation: {info.timeDeviation}");
-
             var deviation = _sum / (data.id + 1) * 1000;
             var descriptor = (deviation > 0) ? "Early" : "Late";
             _counter.text = $"{Mathf.Round(deviation)} ms\n{descriptor}";
