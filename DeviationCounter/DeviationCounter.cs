@@ -24,7 +24,7 @@ namespace DeviationCounter
             gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 1f);
             gameObject.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 1f);
 
-            _counter = CustomUI.BeatSaber.BeatSaberUI.CreateText(canvas.transform as RectTransform, $"Deviation \n{0}", Vector2.zero);
+            _counter = CustomUI.BeatSaber.BeatSaberUI.CreateText(canvas.transform as RectTransform, $"0 ms\nEarly", Vector2.zero);
             _counter.alignment = TextAlignmentOptions.Center;
             _counter.transform.localScale *= .12f;
             _counter.fontSize = 2.5f;
@@ -53,7 +53,9 @@ namespace DeviationCounter
             
             Logger.Log($"Note {data.id} cut with deviation: {info.timeDeviation}");
 
-            _counter.text = $"Deviation \n{Mathf.Round((_sum / (data.id - 1)) * 1000)} ms";
+            var deviation = _sum / (data.id + 1) * 1000;
+            var descriptor = (deviation > 0) ? "Early" : "Late";
+            _counter.text = $"{Mathf.Round(deviation)} ms\n{descriptor}";
         }
     }
 }
