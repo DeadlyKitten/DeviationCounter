@@ -4,6 +4,7 @@
   "description": "A counter to show how early/late you hit bloq.",
   "gameVersion": "1.2.0",
   "id": "Deviation Counter",
+  "icon": "DeviationCounter.Resources.stopwatch.png",
   "name": "Deviation Counter",
   "version": "1.0.0",
   "features": []
