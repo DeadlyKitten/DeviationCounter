@@ -7,5 +7,6 @@
   "icon": "DeviationCounter.Resources.stopwatch.png",
   "name": "Deviation Counter",
   "version": "1.0.0",
-  "features": []
+  "features": [],
+  "loadAfter": [ "Counters+" ]
 }
